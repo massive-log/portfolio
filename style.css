@@ -68,6 +68,30 @@ body{
     margin-left:1rem;
 }
 
+.x{
+    transition: 0.3s ease;
+    position: absolute;
+    left:-4px;
+    z-index: 2;
+    background:var(--primary);
+    width:120%;
+    transform: rotate(45deg);
+    height:4px;
+}
+.xReverse{
+    transform: rotate(-45deg);
+}
+
+#hambCloseButton{
+    cursor: pointer;
+    outline: none;
+    border:none;
+    background:transparent;
+}
+
+#hambCloseButton:hover > div{
+    height:6px;
+}
 .divider-primary{
     width: 10rem;
     height:4px;
