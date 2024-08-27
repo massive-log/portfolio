@@ -3,12 +3,14 @@
     --dark:#232122;
 }
 
+
+
 *{
     -webkit-tap-highlight-color: transparent;
 }
 body{
     font-family: "Poppins", sans-serif;
-    margin:0;
+    padding:0 128px;
     display:flex;
     justify-content: center;
     flex-direction: column;
@@ -25,6 +27,72 @@ body{
     to{
         opacity: 1;
     }
+}
+
+
+
+
+.projectContainer div{
+    margin: 2rem 0;
+}
+.projectContainer{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.divider{
+    background:rgb(240,240,240);
+    grid-column: 1/3;
+    width:100%;
+    height:2px;
+}
+
+.twocolumn{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.flexCenter{
+    width:500px;
+}
+.projectHeaderImg{
+    background:lightgray;
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    position:relative;
+    height:300px; 
+    width:100%; 
+    border-radius: 4rem 4rem 0 0;      
+}
+
+.projectHeaderImg div{
+    width:auto;
+    border-radius: 52px 52px 0 0;
+    bottom:0;
+    margin:0;
+    height:42px;
+    background: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectHeaderImg div div{
+    width: auto;
+    padding:1rem 3rem;
+    background: white;
+    overflow: hidden;
+}
+
+.projectImage{
+    grid-column: 1/3;
+}
+
+/*Contact*/
+
+input[type=text]{
+    padding:1rem;
+    border-radius: 0.5rem;
 }
 #hambCloseButton{
     position:absolute;
@@ -50,13 +118,14 @@ body{
 
 .hambMenu ul{
     list-style: none;
+    width:60%;
 }
 
 .hambMenu ul li{
     transition: font-weight 0.1s ease;
     transition: margin-left 0.2s ease;
     color:var(--primary);
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .hambMenu ul a{
@@ -106,13 +175,14 @@ h1{
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 8rem;
+    font-size: 3rem;
     padding:0;
     margin:0;
     height:auto;
 }
 
 p{
+    font-weight: 300;
     width:100%;
     height:auto;
     margin:0;
@@ -123,9 +193,7 @@ p{
     transition: 0.3s;
     margin:auto;
     width:80rem;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:4rem;
+    gap:2rem;
 }
 
 nav img{
@@ -162,6 +230,9 @@ nav{
     cursor: pointer;
 }
 
+
+
+
 h3{
     margin:1rem;
     font-family: Poppins sans-serif;
@@ -179,8 +250,8 @@ h3{
 }
 
 .block .blockCircle{
-    bottom:-16rem;
-    right:-16rem;
+    bottom:-20rem;
+    right:-20rem;
 }
 
 .block:hover > .blockCircle{
@@ -192,12 +263,12 @@ h3{
     cursor: pointer;
     border-radius: 50%;
     background:var(--primary);
-    width:5rem;
-    height:5rem;
+    width:6.5rem;
+    height:6.5rem;
     outline: none;
     border: none;
-    top:28%;
-    left:28%;
+    top:33%;
+    left:33%;
     position: absolute;
 }
 .block{
@@ -206,7 +277,7 @@ h3{
     width: 100%;
     height:24rem;
     background:lightgray;
-    border-radius: 12px;
+    border-radius: 24px;
     position: relative;
 }
 
@@ -217,8 +288,8 @@ h3{
     right:-20%;
     background:var(--dark);
     border-radius: 50%;
-    width:15rem;
-    height:15rem;
+    width:20rem;
+    height:20rem;
     aspect-ratio: 1/1;
     display:flex;
     justify-content: center;
@@ -243,6 +314,14 @@ h3{
 .block-taski{
     transition: 0.3s;
     background: url(images/covers/taski.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.block-waddup{
+    transition: 0.3s;
+    background: url(images/covers/waddupdog.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -279,6 +358,24 @@ h3{
     }
 }
 
+.btn-primary{
+    margin:1rem auto;
+    transition: 0.3s;
+    box-shadow: 0px 6px 12px -3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    border:none;
+    font-family: "Poppins" sans-serif;
+    outline: none;
+    background:var(--primary);
+    font-size: 1.5rem;
+}
+.btn-primary:hover{
+    opacity: 0.9;
+    box-shadow: 0px 11px 12px -3px rgba(0,0,0,0.1);
+    transform: translateY(-2px)
+}
 /*Page*/
 .project{
     border: 1px solid red;
@@ -299,29 +396,71 @@ h3{
 }
 
 .projectImage{
-    border-radius: 1rem;
+    border-radius: 3rem 3rem 3rem 3rem;
     width:100%;
     height:32rem;
     background:lightgray;
+    margin:0;
+}
+.gallery{
+    width:100%;
+    height:auto;
+    display:flex;
+    gap:1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.halfImage{
+    margin:0;
+    width: 40%;
+    height:40%;
+    aspect-ratio: 1/1;
+}
+
+.me{
+    background: url(images/me.png);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(240,240,240);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.meAbout{
+    background: url(images/me.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    position: fixed;
+    width:72rem;
+    height:90%;
+    z-index: -1;
+    bottom:0;
+    right:0;
 }
 
 .span2{
     grid-column: span 2;
 }
 
+
+
+
+
 @media only screen and (max-width:1350px){
     nav a{
         max-height: 100%;
         height:16vw;
     }
-    
-    
-    
-    h1{
-        font-size: clamp(42px, 12vw, 12vw);
-    }
     body{
-        margin: 0 2rem;
+        padding:0 32px;
+    }
+    .meAbout{
+        width:50rem;
+    }
+    
+    body{
+        margin: 0 1rem;
     }
 
     #navContainer{
@@ -334,27 +473,53 @@ h3{
     }
     .container{
         width:100%;
-        gap:2rem;
     }
 }
+@media only screen and (max-width:900px){
+.meAbout{
+        bottom:-50px;
+        right:-8rem;
+    }
+body{
+    padding:0 32px;
+}
+.projectHeaderImg{
+        height:200px;        
+    }
+}
+
 @media only screen and (max-width:800px){
     .hambMenu{
         width:100vw;
     }
-    .projectHeaderDesc{
-        grid-column: 1/3;
+    .flexCenter{
+        width:90%;
     }
     h1{
         grid-column: 1/3;
         height:auto;
+        font-size: clamp(28px, 4vw, 25vw);
     }
-    
-}
-@media only screen and (max-width:610px){
     .container{
         grid-template-columns: 1fr;
     }
     
+}
+@media only screen and (max-width:610px){
+    
+    .meAbout{
+        position:relative;
+        right:1rem;
+        width:110%;
+        height:23rem;
+        margin-top:-6rem;
+    }
+    body{
+        padding:0 2px;
+    }
+    input{
+        width:100%;
+    }
     nav img{
     height:16vw;
 }
